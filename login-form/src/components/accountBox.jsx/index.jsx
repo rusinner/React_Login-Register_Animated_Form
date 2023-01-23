@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { LoginForm } from "./loginForm";
 
 const BoxContainer = styled.div`
   width: 280px;
@@ -15,11 +16,11 @@ const BoxContainer = styled.div`
 
 const TopContainer = styled.div`
   width: 100%;
-  height: 250px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 0 1.8em;
+  padding: 0.8em;
   padding-bottom: 5em;
 `;
 const BackDrop = styled.div`
@@ -65,17 +66,27 @@ const SmallText = styled.h4`
   z-index: 2;
   top: 4rem;
 `;
+
+const InnerContainer = styled.div`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+`;
 export function AccountBox(props) {
   return (
     <BoxContainer>
+      <BackDrop />
       <TopContainer>
-        <BackDrop />
         <HeaderContainer>
           <HeaderText>Welcome</HeaderText>
           <HeaderText>Back</HeaderText>
           <SmallText>Please Sign In to continue</SmallText>
         </HeaderContainer>
       </TopContainer>
+      <InnerContainer>
+        <LoginForm />
+      </InnerContainer>
     </BoxContainer>
   );
 }
